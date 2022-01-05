@@ -43,6 +43,13 @@ const Checkout = (props) => {
         if (!formIsValid) {
             return;
         }
+
+        props.onConfirm({
+            name: enteredName,
+            street: enteredStreet,
+            city: enteredCity,
+            postalcode: enteredPostalCode
+        });
     };
     const nameControlClasses = `${classes.control} ${formInputValidity.name ? '' : classes.invalid}`;
     const streetControlClasses = `${classes.control} ${formInputValidity.street ? '' : classes.invalid}`;
